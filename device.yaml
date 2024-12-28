@@ -1,0 +1,20 @@
+substitutions:
+  device_name: workshop
+
+esphome:
+  name: ${device_name}
+
+debug:
+  update_interval: 5s
+
+# Enable logging
+logger:
+  level: DEBUG
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+<<: !include wifi.yaml
+<<: !include esp32-c3-bme280.yaml

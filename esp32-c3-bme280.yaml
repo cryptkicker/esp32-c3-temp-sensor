@@ -1,0 +1,46 @@
+i2c:
+  sda: GPIO20
+  scl: GPIO21
+  scan: true
+  id: bus_a
+
+sensor:
+  - platform: bme280_i2c
+    temperature:
+      name: "Temperature"
+      id: bme280_temperature
+      filters:
+        - round_to_multiple_of: 0.25
+        - round: 1
+      unit_of_measurement: "°C"
+      icon: 'mdi:thermometer'
+    pressure:
+      name: "Pressure"
+      id: bme280_pressure
+      filters:
+        # https://mathda.com/convert/pressure/hectopascal-to-inch-of-mercury
+        - lambda: return x * 0.02952998 + 1.01222; // hPa => inHg + offset
+        #- calibrate_linear:
+        #    method: least_squares
+        #    datapoints:
+        #      # Map 0.0 (from sensor) to 1.0 (true value)
+        #      - 14.44 -> 14.935959515
+        - round: 2
+      unit_of_measurement: 'inHg'
+    humidity:
+      name: "Relative Humidity"
+      id: bme280_humidity
+      filters:
+        - round_to_multiple_of: 0.25
+        - round: 1
+    address: 0x76
+    update_interval: 15s
+  - platform: template
+    name: "Dew Point"
+    lambda: |-
+      return (243.5*(log(id(bme280_humidity).state/100)+((17.67*id(bme280_temperature).state)/
+      (243.5+id(bme280_temperature).state)))/(17.67-log(id(bme280_humidity).state/100)-
+      ((17.67*id(bme280_temperature).state)/(243.5+id(bme280_temperature).state))))
+      * (9.0/5.0) + 32.0;
+    unit_of_measurement: °F
+    icon: 'mdi:thermometer-alert'
