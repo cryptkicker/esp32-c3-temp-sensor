@@ -74,7 +74,7 @@ esphome -s device_name workshop run device.yaml
 
 ## Design
 
-A custom 3D-printed enclosure is available to house the ESP32-S3 Super Mini and the BME280 sensor. You can find the design files on [Printables]([https://www.thingiverse.com/](https://www.printables.com/model/1124472-esp32-c3-temperature-sensor-enclosure)).
+A custom 3D-printed enclosure is available to house the ESP32-S3 Super Mini and the BME280 sensor. You can find the design files on [Printables](https://www.printables.com/model/1124472-esp32-c3-temperature-sensor-enclosure).
 
 ---
 
