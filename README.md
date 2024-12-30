@@ -36,7 +36,6 @@ Refer to the wiring diagram below to connect the ESP32-S3 Super Mini and the BME
 
 *Note: Ensure proper connections as incorrect wiring can damage the components.*
 
-### Wiring Diagram Image
 ![Wiring Diagram](./docs/temp-sensor-wiring-diagram.png)
 
 ---
