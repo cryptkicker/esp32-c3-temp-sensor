@@ -7,7 +7,7 @@ ota:
     password: !secret ota_password
 
 wifi:
-  ssid: "disco"
+  ssid: !secret wifi_ssid
   password: !secret wifi_password
   output_power: 8.5
   #fast_connect: On
@@ -18,5 +18,3 @@ wifi:
     password: !secret ap_fallback_password
 
 captive_portal:
-
-
