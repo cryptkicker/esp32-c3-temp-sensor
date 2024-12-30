@@ -59,6 +59,7 @@ Include pictures of the following:
 ```yaml
 authentication_key: '<base64 32-byte key>'
 ota_password: "<OTA_PASSWORD>"
+wifi_ssid: "<WIFI_SSID>"
 wifi_password: "<WIFI_PASSOWRD>"
 ap_fallback_password: "<AP_FALLBACK_PASSWORD>"
 ```
