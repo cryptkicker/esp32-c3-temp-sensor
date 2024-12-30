@@ -42,10 +42,8 @@ Refer to the wiring diagram below to connect the ESP32-S3 Super Mini and the BME
 
 ## Assembly Pictures
 
-Include pictures of the following:
-1. Individual components.
-2. Assembled wiring setup on the breadboard.
-3. Final assembly inside the enclosure (if applicable).
+![Board assembled (bottom view)](./docs/board-assembled-bottom.jpg)
+![Board assembled (top view)](./docs/board-assembled-top.jpg)
 
 ---
 
